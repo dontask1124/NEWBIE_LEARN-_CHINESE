@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Newbie learn Chinnese</title>
+        <link href="static/css/main.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <table width="100%" border="0" height="100%">
+            <tbody>
+                {% include "includes/header.html" %}
+                {% include "includes/nav.html"%}
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <tr class="alert alert-{{category}}">
+                        <td><p>{{message}}</p></td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {% block content%}
+            {% endblock %}
+            {% include "includes/footer.html" %}
+            </tbody>
+        </table>
+
+    </body>
+
+</html>

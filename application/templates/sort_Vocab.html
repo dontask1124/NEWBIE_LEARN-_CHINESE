@@ -1,0 +1,22 @@
+{% extends "layout.html"%}
+{% block content%}
+<tr id="content">
+	<table width="100%" cellspacing="12" cellpadding="2" class="content_Table">
+		<tbody>
+			<tr class="content_Table_Header">
+				<td>Tiếng Việt</td>
+				<td>Phiên âm</td>
+				<td>Tiếng Trung</td>
+				<td>Ý nghĩa</td>
+			</tr>
+			<tr class="content_Area">
+				<td>{{ data.tieng_Viet}}</td>
+				<td>{{ data.phien_Am}}</td>
+				<td>{{ data.tieng_Trung}}</td>
+				<td style="font-size: 20px">{{ data.y_Nghia}}</td>
+			</tr>
+		</tbody>
+	</table>
+</tr>
+
+{% endblock%}

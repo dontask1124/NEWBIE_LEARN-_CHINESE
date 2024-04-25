@@ -1,0 +1,62 @@
+{% extends "layout.html"%}
+{% block content%}
+<tr id="content">
+	<table width="100%" cellspacing="12" cellpadding="2" class="content_Table">
+		<tbody>
+			<tr>
+				<td colspan="2">
+					<form method="POST">
+					<span style="font-size: 18px;"><strong>Phân loại:</strong></span>
+					<select name="Filter_Phan_Loai" id="Filter_Phan_Loai">
+					  <option value="">Tất cả</option>
+						<option value="Giao tiếp cơ bản">Giao tiếp cơ bản</option>
+						<option value="Hành động">Hành động</option>
+						<option value="Gia đình">Gia đình</option>
+						<option value="Thực vật">Thực vật</option>
+						<option value="Động vật">Động vật</option>
+						<option value="Hành động">Hành động</option>
+						<option value="Số đếm">Số đếm</option>
+						<option value="Bộ phận con người">Bộ phận con người</option>
+						<option value="Đồ vật">Đồ vật</option>
+						<option value="Địa điểm">Địa điểm</option>
+						<option value="Thức uống">Thức uống</option>
+						<option value="Phương tiện vận tải">Phương tiện vận tải</option>
+						<option value="Mẫu câu thường dùng trong lớp học">Mẫu câu thường dùng trong lớp học</option>
+						<option value="Về kích thước">Về kích thước</option>
+						<option value="Đồ ăn">Đồ ăn</option>
+						<option value="Tiền tệ">Tiền tệ</option>
+						<option value="Phương tiện">Phương tiện</option>
+						<option value="Cảm xúc">Cảm xúc</option>
+						<option value="Nghề nghiệp">Nghề nghiệp</option>
+						<option value="Khác">Khác</option>
+					  </select>
+					  <button type="submit"> LỌC </button>
+					</form>
+				</td>
+				<td></td>
+				<td></td>
+				<td>
+				</td>
+
+			</tr>
+			<tr class="content_Table_Header">
+				<td>Tiếng Việt</td>
+				<td>Phiên âm</td>
+				<td>Tiếng Trung</td>
+				<td>Phân loại</td>
+				<td>Ý nghĩa</td>
+			</tr>
+			{% for data in data%}
+			<tr class="content_Area">
+				<td>{{ data["tieng_Viet"]}}</td>
+				<td>{{ data["phien_Am"]}}</td>
+				<td>{{ data["tieng_Trung"]}}</td>
+				<td>{{ data["phan_Loai"]}}</td>
+				<td style="font-size: 20px">{{ data["y_Nghia"]}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</tr>
+
+{% endblock%}
